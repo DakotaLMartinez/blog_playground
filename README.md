@@ -58,4 +58,9 @@ This one doesn't create a model or any specs, just the migration
 ### Scaffold
 Creates everything and actually fills in all of your controller and view logic so you have working RESTful routes for that resource. This is rarely used because it generally requires to remove and rework things to get what you actually want (it does more than you need/or different things than you need more often than not)
 
-Also, you can reverse
+Also, you can reverse any of these generators by replacing the g with a d.
+```
+rails d scaffold coupons
+```
+
+This will remove all of the files created by the resource generator. (Be careful not to do this in a lab!)
