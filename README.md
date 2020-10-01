@@ -18,26 +18,40 @@
 If I want to try out an idea, but I'm not sure I'm going to keep it long term. I can create a branch and make the change on that branch, that way I can safely try things without breaking something that I know works.
 
 Commands to know:
-```git branch```
+```
+git branch
+```
 shows a list of branches and also the one that we have currently checked out.
-```git checkout```
+```
+git checkout
+```
 This command allows you to checkout an existing branch. When you do this, you need to make sure that your working directory is clean. If you have changes that you haven't committed, you'll need to commit (or stash) them before you switch branches.
-```git checkout -b new_branch_name```
+```
+git checkout -b new_branch_name
+```
 This command will create and checkout a new branch. This does not require a commit beforehand. Any changes you have that aren't currently committed can be applied to the new branch after you create it with this command.
 
 ## Generators
 
 ### Resource
-```rails g resource coupon coupon_code:string store:string -s```
+```
+rails g resource coupon coupon_code:string store:string -s
+```
 This will create the model and the migration with the columns we specified. It also creates the controller file (and spec for it) the helper file (and spec for it). It will create the views path for the controller if it doesn't already exist and it will add resources to the routes for coupons and also create the asset files. 
 ### Model 
-```rails g model create_coupons coupon_code:string store:string -s```
+```
+rails g model create_coupons coupon_code:string store:string -s
+```
 This will create both the model and the migration and set the columns we specified in the create_table block. This will also create a model spec (and fixtures depending on what test framework you're using) but -s will make sure you don't override anything that's already there.
 ### Controller
-```rails g controller coupons -s```
+```
+rails g controller coupons -s
+```
 Creates a controller, a views directory, an assetts file (scss and coffeescript depending on rails version and config), also creates a helper file and generally specs as well. If we add the -s flag, it will skip generating files that already exist and this is great for learn labs that already have specs because generators generally add specs as well, but we don't want that if we're doing a lab that already has specs.
 ### Migration
-```rails g migration create_coupons coupon_code:string store:string```
+```
+rails g migration create_coupons coupon_code:string store:string
+```
 this would create the migration in which you would call create_table and add the columns coupon_code and store.
 This one doesn't create a model or any specs, just the migration
 
